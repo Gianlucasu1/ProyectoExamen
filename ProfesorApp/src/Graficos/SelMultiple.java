@@ -16,7 +16,7 @@ import profesorapp.ExamenControlador;
  */
 public class SelMultiple extends javax.swing.JPanel {
 
-    private InicioProfe profe;
+    private InicioProfe profe1;
     /**
      * Creates new form SelMultiple
      */
@@ -25,7 +25,7 @@ public class SelMultiple extends javax.swing.JPanel {
     }
 
     public void setProfe(InicioProfe profe) {
-        this.profe = profe;
+        this.profe1 = profe;
     }
     
     
@@ -260,7 +260,10 @@ public class SelMultiple extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        // System.out.println("entro");
-       // profe.cambiarTarjeta("Abierta",this);
+       
+       InicioProfe profe= new InicioProfe();
+       this.setProfe(profe);
+       profe1.cambiarTarjeta("PanelInicio",this);
        String pregunta = txt_pregunta_multiple.getText().trim();
        String opcion1= txt_opcion1.getText().trim();
        String opcion2= txt_opcion2.getText().trim();

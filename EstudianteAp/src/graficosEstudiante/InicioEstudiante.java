@@ -3,37 +3,49 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Graficos;
+package graficosEstudiante;
 
+import controladorestudiante.ExamenControladorE;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.SwingUtilities;
-import profesorapp.ExamenControlador;
+import modeloestudiante.PreguntaE;
+import modeloestudiante.PreguntaMultipleE;
+import modeloestudiante.Prueba;
 
 /**
  *
  * @author gianlucasorem
  */
-public class InicioProfe extends javax.swing.JFrame {
-
-    SelMultiple selmultiple = new SelMultiple();
+public class InicioEstudiante extends javax.swing.JFrame {
+    
+    PreguntaMultipleG preguntamult = new PreguntaMultipleG();
     int x=0;
     
     
-    Abierta abierta = new Abierta();
+    PreguntaAbierta abierta = new PreguntaAbierta();
     CardLayout vista;
+    List<PreguntaE> preguntaspiloto;
+    String descripcionpiloto;
+    Prueba pruebapiloto=new Prueba(preguntaspiloto);
 
     /**
-     * Creates new form InicioProfe
+     * Creates new form InicioEstudiante
      */
-    public InicioProfe() {
+    public InicioEstudiante() {
         initComponents();
-        selMultiple1.setProfe(this);
+        
+        
+       // selMultiple1.setProfe(this);
         setLocationRelativeTo(null);
         vista = (CardLayout) Pnl_principal.getLayout();
-        
-
     }
+    
+    
+   
+    
     
     public void cambiarTarjeta(String Cadena,Object c){
         System.out.println("Entro");
@@ -42,6 +54,7 @@ public class InicioProfe extends javax.swing.JFrame {
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint(); 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,45 +66,26 @@ public class InicioProfe extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         Pnl_principal = new javax.swing.JPanel();
-        panelInicio1 = new Graficos.PanelInicio();
-        selMultiple1 = new Graficos.SelMultiple();
-        abierta1 = new Graficos.Abierta();
+        panelInicioE1 = new graficosEstudiante.PanelInicioE();
+        preguntaAbierta1 = new graficosEstudiante.PreguntaAbierta();
+        preguntaMultipleG1 = new graficosEstudiante.PreguntaMultipleG();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton3.setText("Crear Pregunta Abierta");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Crear Pregunta Opción M");
+        jButton1.setText("Realizar Examen");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Revisar Examenes");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setText("Subir Examen");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Ver Notas");
-
-        jButton5.setText("Subir Examen");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
 
@@ -100,48 +94,27 @@ public class InicioProfe extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jButton3)
-                .addGap(65, 65, 65)
+                .addGap(135, 135, 135)
                 .addComponent(jButton1)
-                .addGap(69, 69, 69)
-                .addComponent(jButton2)
-                .addGap(70, 70, 70)
+                .addGap(165, 165, 165)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addGap(57, 57, 57))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Pnl_principal.setBackground(new java.awt.Color(255, 255, 255));
         Pnl_principal.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout panelInicio1Layout = new javax.swing.GroupLayout(panelInicio1);
-        panelInicio1.setLayout(panelInicio1Layout);
-        panelInicio1Layout.setHorizontalGroup(
-            panelInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-        panelInicio1Layout.setVerticalGroup(
-            panelInicio1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
-        );
-
-        Pnl_principal.add(panelInicio1, "card4");
-        Pnl_principal.add(selMultiple1, "card2");
-        Pnl_principal.add(abierta1, "card3");
+        Pnl_principal.add(panelInicioE1, "card4");
+        Pnl_principal.add(preguntaAbierta1, "card3");
+        Pnl_principal.add(preguntaMultipleG1, "card4");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -155,7 +128,7 @@ public class InicioProfe extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+            .addComponent(Pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -176,34 +149,45 @@ public class InicioProfe extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-// para pregunta abierta
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    
-        
-        cambiarTarjeta("Abierta",abierta);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    // Panel de la opcion multiple
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         /*Pnl_principal.add(selmultiple, "selmultiple");
         vista.show(Pnl_principal, "selmultiple");
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
         */
-        cambiarTarjeta("Multiple",selmultiple);
+        pruebapiloto=ExamenControladorE.getInstance().guardarPruebaDesdeArchivo();
+        preguntaspiloto=pruebapiloto.getPreguntas();
+        descripcionpiloto=pruebapiloto.getDescripcion();
+        int i=0;
+        
+        System.out.println("hola "+preguntaspiloto.size());
+        
+        
+        
+        while (i<preguntaspiloto.size()){
+            System.out.println("hola2");
+            System.out.println(preguntaspiloto.get(i));
+            
+            if(preguntaspiloto.get(i) instanceof PreguntaMultipleE)
+            {cambiarTarjeta("multiple",preguntamult);
+            
+            
+            
+            }
+            else 
+            {cambiarTarjeta("abierta",abierta);
+            
+            
+            }
+        }
+    
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
-    // panel para cargar el examen al archivo
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Descripcion descripcion= new Descripcion();
-        descripcion.setVisible(true);
-        descripcion.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,35 +206,32 @@ public class InicioProfe extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InicioProfe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InicioProfe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InicioProfe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InicioProfe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InicioProfe().setVisible(true);
+                new InicioEstudiante().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Pnl_principal;
-    private Graficos.Abierta abierta1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private Graficos.PanelInicio panelInicio1;
-    private Graficos.SelMultiple selMultiple1;
+    private graficosEstudiante.PanelInicioE panelInicioE1;
+    private graficosEstudiante.PreguntaAbierta preguntaAbierta1;
+    private graficosEstudiante.PreguntaMultipleG preguntaMultipleG1;
     // End of variables declaration//GEN-END:variables
 }

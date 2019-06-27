@@ -36,22 +36,7 @@ public class ArchivoControlador {
     // revisar este metodo para adjuntar cargar prueba, necesario para los demas metodos del profesor
     
 
-    public Prueba cargarPrueba() {
-        Prueba prueba = null;
-        
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Examen.cad"))) {
-            
-                Object readObject = ois.readObject();
-                if (readObject != null && readObject instanceof Pregunta) {
-                    prueba= ((Prueba) readObject);
-                } 
-            
-        } catch (Exception ex) {
-//            System.err.println("Error al leer archivo: " + ex);
-        }
-
-        return prueba;
-    }
+    
     
    /* public void guardarPrueba(List<Pregunta> preguntas) {
         try (ObjectOutputStream ois = new ObjectOutputStream(new FileOutputStream("prueba1.cad"))) {

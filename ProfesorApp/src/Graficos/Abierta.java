@@ -13,12 +13,16 @@ import java.util.List;
  * @author gianlucasorem
  */
 public class Abierta extends javax.swing.JPanel {
+    private InicioProfe profe1;
 
     /**
      * Creates new form Abierta
      */
     public Abierta() {
         initComponents();
+    }
+    public void setProfe(InicioProfe profe) {
+        this.profe1 = profe;
     }
 
     /**
@@ -138,6 +142,9 @@ public class Abierta extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        InicioProfe profe= new InicioProfe();
+        this.setProfe(profe);
+        profe1.cambiarTarjeta("PanelInicio",this);
         String pregunta = txt_pregunta.getText().trim();
         int porcentaje = Integer.parseInt(txt_porcentaje.getText().trim());
         
