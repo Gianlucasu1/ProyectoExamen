@@ -14,6 +14,7 @@ import java.util.List;
  * @author gianlucasorem
  */
 public class Prueba implements Serializable{
+    private static final long serialVersionUID = 155542556245L;
     
     private String descripcion;
     

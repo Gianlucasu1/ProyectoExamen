@@ -5,6 +5,8 @@
  */
 package graficosEstudiante;
 
+import controladorestudiante.ExamenControladorE;
+
 /**
  *
  * @author gianlucasorem
@@ -16,6 +18,10 @@ public class PreguntaAbierta extends javax.swing.JPanel {
      */
     public PreguntaAbierta() {
         initComponents();
+    }
+    
+    public void agregarInfo(String enunciado){
+    txt_enunciado.setText(enunciado);
     }
 
     /**
@@ -30,16 +36,16 @@ public class PreguntaAbierta extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        txt_enunciado = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txt_answer = new javax.swing.JTextArea();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("Aca va la pregunta a realizarse");
+        txt_enunciado.setText("Aca va la pregunta a realizarse");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -47,14 +53,14 @@ public class PreguntaAbierta extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(230, 230, 230)
-                .addComponent(jLabel1)
+                .addComponent(txt_enunciado)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(txt_enunciado)
                 .addGap(45, 45, 45))
         );
 
@@ -65,9 +71,9 @@ public class PreguntaAbierta extends javax.swing.JPanel {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txt_answer.setColumns(20);
+        txt_answer.setRows(5);
+        jScrollPane1.setViewportView(txt_answer);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -138,10 +144,18 @@ public class PreguntaAbierta extends javax.swing.JPanel {
         );
 
         jPanel1.getAccessibleContext().setAccessibleName("abierta");
+
+        getAccessibleContext().setAccessibleName("Abierta");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       /* InicioProfe profe= new InicioProfe();
+       
+        
+       String answer;
+       answer=txt_answer.getText();
+       ExamenControladorE.getInstance().agregarRespList(answer);
+//ExamenControladorE.getInstance().añadirRespuestas();
+        /* InicioProfe profe= new InicioProfe();
         this.setProfe(profe);
         profe1.cambiarTarjeta("PanelInicio",this);
         String pregunta = txt_pregunta.getText().trim();
@@ -157,11 +171,11 @@ public class PreguntaAbierta extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txt_answer;
+    private javax.swing.JLabel txt_enunciado;
     // End of variables declaration//GEN-END:variables
 }

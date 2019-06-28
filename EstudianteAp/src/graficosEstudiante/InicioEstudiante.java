@@ -5,15 +5,16 @@
  */
 package graficosEstudiante;
 
+import com.java4read.modelo.Pregunta;
+import com.java4read.modelo.PreguntaMultiple;
+import com.java4read.modelo.Prueba;
 import controladorestudiante.ExamenControladorE;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingUtilities;
-import modeloestudiante.PreguntaE;
-import modeloestudiante.PreguntaMultipleE;
-import modeloestudiante.Prueba;
+
 
 /**
  *
@@ -27,7 +28,7 @@ public class InicioEstudiante extends javax.swing.JFrame {
     
     PreguntaAbierta abierta = new PreguntaAbierta();
     CardLayout vista;
-    List<PreguntaE> preguntaspiloto;
+    List<Pregunta> preguntaspiloto;
     String descripcionpiloto;
     Prueba pruebapiloto=new Prueba(preguntaspiloto);
 
@@ -155,9 +156,14 @@ public class InicioEstudiante extends javax.swing.JFrame {
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
         */
+        Pregunta pregunta;
+        PreguntaMultiple pregunta2;
         pruebapiloto=ExamenControladorE.getInstance().guardarPruebaDesdeArchivo();
         preguntaspiloto=pruebapiloto.getPreguntas();
         descripcionpiloto=pruebapiloto.getDescripcion();
+        String[] respuestasmostrar=new String[4];
+        Boolean[] respuestas_correctas=new Boolean[4];
+        int porcentaje;
         int i=0;
         
         System.out.println("hola "+preguntaspiloto.size());
@@ -168,14 +174,44 @@ public class InicioEstudiante extends javax.swing.JFrame {
             System.out.println("hola2");
             System.out.println(preguntaspiloto.get(i));
             
-            if(preguntaspiloto.get(i) instanceof PreguntaMultipleE)
-            {cambiarTarjeta("multiple",preguntamult);
-            
-            
+            if(preguntaspiloto.get(i) instanceof PreguntaMultiple)
+            {
+                pregunta2=(PreguntaMultiple) preguntaspiloto.get(i);
+                String enunciadopil=pregunta2.getEnunciado();
+                respuestasmostrar=pregunta2.getRespuestas();
+                respuestas_correctas=pregunta2.getSolucion();
+                porcentaje=pregunta2.getPorcentaje();
+                System.out.println(respuestas_correctas[0]);
+                
+                
+                preguntamult.agregarInfo(enunciadopil,respuestasmostrar);
+                
+                  
+                
+                cambiarTarjeta("Multiple",preguntamult);
+                
+                ExamenControladorE.getInstance().obtenerRespuestasProfesor(respuestas_correctas, porcentaje);
+                
+                
+               
+                
+                
+                i=i+1;
+                
             
             }
-            else 
-            {cambiarTarjeta("abierta",abierta);
+            
+            
+            else if(preguntaspiloto.get(i) instanceof Pregunta)
+            {
+                pregunta= preguntaspiloto.get(i);
+                String enunciadopil=pregunta.getEnunciado();
+                abierta.agregarInfo(enunciadopil);
+                
+                cambiarTarjeta("Abierta",abierta);
+            
+            
+            i=i+1;
             
             
             }
@@ -186,7 +222,9 @@ public class InicioEstudiante extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       
+   ExamenControladorE.getInstance().subirRespuestasArch();
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

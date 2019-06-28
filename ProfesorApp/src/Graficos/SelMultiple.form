@@ -309,6 +309,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Opci&#xf3;n 1"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnOp1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="BtnOp2">
               <Properties>

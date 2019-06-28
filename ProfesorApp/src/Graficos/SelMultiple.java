@@ -124,6 +124,11 @@ public class SelMultiple extends javax.swing.JPanel {
         });
 
         BtnOp1.setText("Opción 1");
+        BtnOp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnOp1ActionPerformed(evt);
+            }
+        });
 
         BtnOp2.setText("Opción 2");
 
@@ -306,6 +311,10 @@ public class SelMultiple extends javax.swing.JPanel {
         ExamenControlador.getInstance()
                 .agregarPreguntaMultiple(pregunta, porcentaje,respuestas,solucion);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void BtnOp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOp1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnOp1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

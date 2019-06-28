@@ -5,6 +5,8 @@
  */
 package graficosEstudiante;
 
+import controladorestudiante.ExamenControladorE;
+
 /**
  *
  * @author gianlucasorem
@@ -29,30 +31,28 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txt_pregunta = new javax.swing.JLabel();
+        txt_enun_preg = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txt_opcion1 = new javax.swing.JTextField();
-        txt_opcion2 = new javax.swing.JTextField();
-        txt_opcion3 = new javax.swing.JTextField();
-        txt_opcion4 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        BtnOp1 = new javax.swing.JRadioButton();
-        BtnOp2 = new javax.swing.JRadioButton();
-        BtnOp3 = new javax.swing.JRadioButton();
-        BtnOp4 = new javax.swing.JRadioButton();
+        Op1 = new javax.swing.JRadioButton();
+        Op2 = new javax.swing.JRadioButton();
+        Op3 = new javax.swing.JRadioButton();
+        Op4 = new javax.swing.JRadioButton();
+        txt_op1 = new javax.swing.JLabel();
+        txt_op2 = new javax.swing.JLabel();
+        txt_op3 = new javax.swing.JLabel();
+        txt_op4 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        txt_pregunta.setText("Aca va el enunciado de la pregunta:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -60,14 +60,14 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(227, 227, 227)
-                .addComponent(txt_pregunta)
+                .addComponent(txt_enun_preg)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(txt_pregunta)
+                .addComponent(txt_enun_preg)
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
@@ -94,13 +94,13 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
             }
         });
 
-        BtnOp1.setText("Opción 1");
+        Op1.setText("Opción 1");
 
-        BtnOp2.setText("Opción 2");
+        Op2.setText("Opción 2");
 
-        BtnOp3.setText("Opción 3");
+        Op3.setText("Opción 3");
 
-        BtnOp4.setText("Opción 4");
+        Op4.setText("Opción 4");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -109,12 +109,12 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnOp1)
-                    .addComponent(BtnOp3))
+                    .addComponent(Op1)
+                    .addComponent(Op3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnOp2)
-                    .addComponent(BtnOp4))
+                    .addComponent(Op2)
+                    .addComponent(Op4))
                 .addGap(40, 40, 40))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(166, 166, 166)
@@ -132,16 +132,24 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
                 .addComponent(jLabel7)
                 .addGap(28, 28, 28)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnOp1)
-                    .addComponent(BtnOp2))
+                    .addComponent(Op1)
+                    .addComponent(Op2))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnOp3)
-                    .addComponent(BtnOp4))
+                    .addComponent(Op3)
+                    .addComponent(Op4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(146, 146, 146))
         );
+
+        txt_op1.setText("jLabel1");
+
+        txt_op2.setText("jLabel8");
+
+        txt_op3.setText("jLabel9");
+
+        txt_op4.setText("jLabel10");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -149,22 +157,19 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel2))
-                    .addComponent(txt_opcion2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))
-                    .addComponent(txt_opcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(txt_opcion3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(txt_opcion4, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3)
+                            .addComponent(txt_op1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_op2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_op3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_op4, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(43, 43, 43)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -177,21 +182,21 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
                         .addComponent(jLabel2)
                         .addGap(36, 36, 36)
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_opcion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_op1)
+                        .addGap(22, 22, 22)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_opcion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_op2)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_opcion3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(txt_op3)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_opcion4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 76, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_op4)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -236,12 +241,41 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
+
+        getAccessibleContext().setAccessibleName("Multiple");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // System.out.println("entro");
 
-       /* InicioEstudiante profe= new InicioEstudiante();
+        Boolean[] respuestas_estudiante= new Boolean[4];
+        
+        if(Op1.isSelected())
+        respuestas_estudiante[0]=true;
+        else 
+        respuestas_estudiante[0]=false;
+        
+        if(Op2.isSelected())
+        respuestas_estudiante[1]=true;
+        else 
+        respuestas_estudiante[1]=false;
+        
+        if(Op3.isSelected())
+        respuestas_estudiante[2]=true;
+        else 
+        respuestas_estudiante[2]=false;
+        int x=0;
+        if(Op4.isSelected())
+        respuestas_estudiante[3]=true;
+        else 
+        respuestas_estudiante[3]=false;   
+        
+
+        ExamenControladorE.getInstance().obtenerRespuestasEstudiante(respuestas_estudiante);
+        ExamenControladorE.getInstance().compararRespuestasNota();
+        
+// System.out.println("entro");
+
+        /* InicioEstudiante profe= new InicioEstudiante();
         this.setEstudiante(estudiante);
         profe1.cambiarTarjeta("PanelInicio",this);
         String pregunta = txt_pregunta_multiple.getText().trim();
@@ -280,15 +314,26 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
 
         ExamenControlador.getInstance()
         .agregarPreguntaMultiple(pregunta, porcentaje,respuestas,solucion);
-*/
+        */
     }//GEN-LAST:event_jButton1ActionPerformed
 
-
+   public void agregarInfo(String enunciado, String[] respuestas){
+   
+   txt_enun_preg.setText(enunciado);
+   txt_op1.setText(respuestas[0]);
+   txt_op2.setText(respuestas[1]);
+   txt_op3.setText(respuestas[2]);
+   txt_op4.setText(respuestas[3]);
+   
+   }
+   
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton BtnOp1;
-    private javax.swing.JRadioButton BtnOp2;
-    private javax.swing.JRadioButton BtnOp3;
-    private javax.swing.JRadioButton BtnOp4;
+    private javax.swing.JRadioButton Op1;
+    private javax.swing.JRadioButton Op2;
+    private javax.swing.JRadioButton Op3;
+    private javax.swing.JRadioButton Op4;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -300,10 +345,10 @@ public class PreguntaMultipleG extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField txt_opcion1;
-    private javax.swing.JTextField txt_opcion2;
-    private javax.swing.JTextField txt_opcion3;
-    private javax.swing.JTextField txt_opcion4;
-    private javax.swing.JLabel txt_pregunta;
+    private javax.swing.JLabel txt_enun_preg;
+    private javax.swing.JLabel txt_op1;
+    private javax.swing.JLabel txt_op2;
+    private javax.swing.JLabel txt_op3;
+    private javax.swing.JLabel txt_op4;
     // End of variables declaration//GEN-END:variables
 }

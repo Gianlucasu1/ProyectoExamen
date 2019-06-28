@@ -12,6 +12,7 @@ import java.util.List;
  * @author gianlucasorem
  */
 public class PreguntaMultiple extends Pregunta {
+    private static final long serialVersionUID = 355542556245L;
     String[] respuestas;
     Boolean [] solucion;
     int numero;

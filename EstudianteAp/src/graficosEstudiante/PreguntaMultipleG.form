@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AccessibilityProperties>
+    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Multiple"/>
+  </AccessibilityProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -85,7 +88,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
-                      <Component id="txt_pregunta" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_enun_preg" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -94,17 +97,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="txt_pregunta" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_enun_preg" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="47" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="txt_pregunta">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Aca va el enunciado de la pregunta:"/>
-              </Properties>
+            <Component class="javax.swing.JLabel" name="txt_enun_preg">
             </Component>
           </SubComponents>
         </Container>
@@ -120,26 +120,22 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="txt_opcion2" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="txt_opcion1" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txt_opcion3" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txt_opcion4" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_op1" alignment="0" pref="247" max="32767" attributes="0"/>
+                                  <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_op2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txt_op3" max="32767" attributes="0"/>
+                                  <Component id="txt_op4" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="jPanel4" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -154,21 +150,21 @@
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txt_opcion1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txt_op1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txt_opcion2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txt_op2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txt_opcion3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="txt_op3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txt_opcion4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="76" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txt_op4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -202,14 +198,6 @@
                 <Property name="text" type="java.lang.String" value="Opci&#xf3;n 4:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txt_opcion1">
-            </Component>
-            <Component class="javax.swing.JTextField" name="txt_opcion2">
-            </Component>
-            <Component class="javax.swing.JTextField" name="txt_opcion3">
-            </Component>
-            <Component class="javax.swing.JTextField" name="txt_opcion4">
-            </Component>
             <Container class="javax.swing.JPanel" name="jPanel4">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -223,13 +211,13 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="55" pref="55" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="BtnOp1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnOp3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Op1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Op3" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="130" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="BtnOp2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnOp4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Op2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Op4" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
@@ -252,13 +240,13 @@
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="BtnOp1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnOp2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Op1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Op2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="BtnOp3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnOp4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Op3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Op4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -281,28 +269,48 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="BtnOp1">
+                <Component class="javax.swing.JRadioButton" name="Op1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Opci&#xf3;n 1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="BtnOp2">
+                <Component class="javax.swing.JRadioButton" name="Op2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Opci&#xf3;n 2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="BtnOp3">
+                <Component class="javax.swing.JRadioButton" name="Op3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Opci&#xf3;n 3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="BtnOp4">
+                <Component class="javax.swing.JRadioButton" name="Op4">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Opci&#xf3;n 4"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="txt_op1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="txt_op2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel8"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="txt_op3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel9"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="txt_op4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel10"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

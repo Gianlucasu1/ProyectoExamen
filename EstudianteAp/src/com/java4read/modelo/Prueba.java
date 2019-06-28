@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modeloestudiante;
+package com.java4read.modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,19 +14,20 @@ import java.util.List;
  * @author gianlucasorem
  */
 public class Prueba implements Serializable{
+    private static final long serialVersionUID = 155542556245L;
     
     private String descripcion;
     
-    private List <PreguntaE> preguntas;
+    private List <Pregunta> preguntas;
    
 
-    public Prueba(List<PreguntaE> preguntas) {
+    public Prueba(List<Pregunta> preguntas) {
         
         this.preguntas=preguntas;
         
     }
 
-    public void setPreguntas(List<PreguntaE> preguntas) {
+    public void setPreguntas(List<Pregunta> preguntas) {
         this.preguntas = preguntas;
     }
 
@@ -35,13 +36,14 @@ public class Prueba implements Serializable{
         
     }
 
-    public List<PreguntaE> getPreguntas() {
-        return preguntas;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
+
+    public List<Pregunta> getPreguntas() {
+        return preguntas;
+    }
+    
     
     
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modeloestudiante;
+package com.java4read.modelo;
 
 import java.util.List;
 
@@ -11,16 +11,27 @@ import java.util.List;
  *
  * @author gianlucasorem
  */
-public class PreguntaMultipleE extends PreguntaE {
+public class PreguntaMultiple extends Pregunta {
+    private static final long serialVersionUID = 355542556245L;
     String[] respuestas;
     Boolean [] solucion;
     int numero;
     
-    public PreguntaMultipleE(int porcentaje, String enunciado,String[] respuestas,Boolean[] solucion) {
+    public PreguntaMultiple(int porcentaje, String enunciado,String[] respuestas,Boolean[] solucion) {
         super(porcentaje, enunciado);
         this.respuestas=respuestas;
         this.solucion=solucion;
         int x=0;
     }
+
+    public String[] getRespuestas() {
+        return respuestas;
+    }
+
+    public Boolean[] getSolucion() {
+        return solucion;
+    }
+    
+    
     
 }

@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author gianlucasorem
  */
 public class Pregunta implements Serializable{
+    private static final long serialVersionUID = 255542556245L;
     
     private int numero;
     private int porcentaje;

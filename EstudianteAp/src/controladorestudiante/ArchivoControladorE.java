@@ -5,8 +5,10 @@
  */
 package controladorestudiante;
 
-import modeloestudiante.PreguntaE;
-import modeloestudiante.Prueba;
+
+
+import com.java4read.modelo.Pregunta;
+import com.java4read.modelo.Prueba;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -34,56 +36,43 @@ public class ArchivoControladorE {
     }
     
     
-    // revisar este metodo para adjuntar cargar prueba, necesario para los demas metodos del profesor
     
-
-   /* public Prueba cargarPrueba() {
-        Prueba prueba = null;
-        
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Examen.cad"))) {
-            
-                Object readObject = ois.readObject();
-                if (readObject != null && readObject instanceof Pregunta) {
-                    prueba= ((Prueba) readObject);
-                } 
-            
-        } catch (Exception ex) {
-//            System.err.println("Error al leer archivo: " + ex);
-        }
-
-        return prueba;
-    }/*
-    
-   /* public void guardarPrueba(List<Pregunta> preguntas) {
-        try (ObjectOutputStream ois = new ObjectOutputStream(new FileOutputStream("prueba1.cad"))) {
-            for (Pregunta pregunta : preguntas) {
-                ois.writeObject(preguntas);
-            }
-        } catch (Exception ex) {
-            System.err.println("Error al escribir archivo: " + ex);
-        }
-    }
-   */
 
    
    
    public Prueba cargarPrueba() {
-       List <PreguntaE> preg =new ArrayList<>();
-        Prueba prueba1=new Prueba(preg);
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/Users/gianlucasorem/NetBeansProjects/Ajedrez-version-pro-Gianluca/Proyecto2/ProyectoExamen/ProfesorApp/prueba.cad"))) {
+       List<Pregunta> preg2=new ArrayList<>();
+       Prueba prueba=new Prueba(preg2);
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/Users/gianlucasorem/NetBeansProjects/Ajedrez-version-pro-Gianluca/Proyecto2/ProyectoExamen/ProfesorApp/prueba2.cad"))) {
             
                 Object readObject = ois.readObject();
                 if (readObject != null && readObject instanceof Prueba) {
-                    prueba1=((Prueba)readObject);
+                    prueba=((Prueba)readObject);
                    
                 
                 }
-        } catch (Exception ex) {
-//            System.err.println("Error al leer archivo: " + ex);
+      } catch (Exception ex) {
+            
+           System.err.println("Error al leer archivo: " + ex);
+           ex.printStackTrace();
         }
-        System.out.println(""+prueba1.getDescripcion());
-        return prueba1;
+        System.out.println(""+prueba.getDescripcion());
+        return prueba;
     }
+   
+   public void subirFinal(List<String> resp){
+   
+   try (ObjectOutputStream ois = new ObjectOutputStream(new FileOutputStream("respuestas.cad"))) {
+            for (String respuesta : resp) {
+                ois.writeObject(respuesta);
+            }
+        } catch (Exception ex) {
+            System.err.println("Error al escribir archivo: " + ex);
+        }
+       
+   }
+   
+   
    
    
     

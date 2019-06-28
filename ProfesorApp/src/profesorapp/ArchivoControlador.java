@@ -52,7 +52,7 @@ public class ArchivoControlador {
    public void guardarPrueba(Prueba prueba) {
         
         
-        try (ObjectOutputStream ois = new ObjectOutputStream(new FileOutputStream("prueba.cad"))) {
+        try (ObjectOutputStream ois = new ObjectOutputStream(new FileOutputStream("prueba2.cad"))) {
             
                 ois.writeObject(prueba);
             
